@@ -11,6 +11,9 @@ struct tEletro {
 int main() {
 
 	struct tEletro eletros[MAX];
+	float consumoTotal = 0;
+	float consumoRelativo = 0;
+	int dias;
 
 	for(int i = 0; i < MAX; i++){
 		scanf(" %[^\n]", eletros[i].nome);
@@ -18,12 +21,18 @@ int main() {
 		scanf("%f", &eletros[i].tempo);
 	}
 
-	scanf(" %d", dias);
+	scanf("%d", &dias);
 
 	for(int i = 0; i < MAX; i++){
-		if(strcmp(curso_buscar, alunos[i].curso) == 0){
-			printf("%d %s\n", alunos[i].matricula, alunos[i].nome);
-		}
+		consumoTotal = consumoTotal + eletros[i].potencia * eletros[i].tempo;
+	}
+
+	consumoTotal = consumoTotal * dias;
+	printf("%.2f\n", consumoTotal);
+
+	for(int i = 0; i < MAX; i++){
+		consumoRelativo = ((eletros[i].potencia * eletros[i].tempo * dias)/consumoTotal)*100;
+		printf("%.2f\n", consumoRelativo);
 	}
 
 	return 0;
