@@ -1,3 +1,5 @@
 Joao 4.50
 Ana 7.75
 Camila 7.00
+Ana 4.35
+Breno 8.50

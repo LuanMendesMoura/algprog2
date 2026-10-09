@@ -23,7 +23,11 @@ int main()
     }
     else
     {
-        ptrsaida = fopen("media.txt","w");
+        //Escrever (sobescrever).
+        //ptrsaida = fopen("media.txt","w");
+
+        //Ele continua escrevendo sem apagar o anterior.
+        ptrsaida = fopen("media.txt","a");
         if(ptrsaida == NULL)
             printf("Erro ao abrir media.txt\n");
         fscanf(arq, "%s %f %f", nomeA, &n1, &n2);
