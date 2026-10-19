@@ -98,7 +98,7 @@ void leitura(tCarro carros[], int *n)
 	 scanf(" %[^\n]", carros[*n].marca);
 	 printf("Digite o ano do carro: ");
 	 scanf(" %d", &carros[*n].ano);
-	 printf("Digite o preço do carro: ");
+	 printf("Digite o preco do carro: ");
 	 scanf(" %f", &carros[*n].preco);
 	 (*n) = (*n) + 1;
 
@@ -107,7 +107,7 @@ void leitura(tCarro carros[], int *n)
 
 void listarCarros(tCarro carros[], int n)
 {
-	printf("MARCA -- ANO -- PREÇO\n");
+	printf("MARCA -- ANO -- PRECO\n");
 	 for(int i = 0; i < n; i++){
 	 	printf("%s %d %.2f\n", carros[i].marca, carros[i].ano, carros[i].preco);
 	 }
