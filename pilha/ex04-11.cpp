@@ -64,6 +64,7 @@ char analisar(char *exp)
 {
     celula* topo = NULL;
     int i = 0;
+    char ch;
 
     while(exp[i] != '\0')
     {
@@ -78,13 +79,18 @@ char analisar(char *exp)
     }
     if(topo == NULL)
         return 'S';
-    else return 'N';
+    else{
+        desalocar(topo);
+        return 'N';
+    }
+    
 }
 
 int main()
 {
     int op;
     char exp[50];
+    char resp;
 
     do
     {
@@ -99,7 +105,8 @@ int main()
             printf("\nExpressao: ");
             scanf("%s", exp);
 
-
+            resp = analisar(exp);
+            printf("%c", resp);
             
 
         }
