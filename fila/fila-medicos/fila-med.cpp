@@ -62,3 +62,21 @@ void imprime(pacientes *L)
         printf("%s ", p->nome);
 
 }
+
+void compara_nomes(pacientes *iMed1, pacientes *iMed2)
+{
+    pacientes *p1;
+    pacientes *p2;
+    int achou;
+
+    for(p1 = iMed1; p1 != NULL; p1 = p1->prox)
+    {
+        achou = 0;
+        for(p2 = iMed2; p2 != NULL && achou == 0; p2 = p2->prox)
+        {
+            if(strcasecmp(p1->nome, p2->nome) == 0)
+                printf(" %s", p1->nome);
+                achou = 1;
+        }     
+    }
+}

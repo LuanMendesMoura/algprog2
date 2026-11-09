@@ -14,4 +14,5 @@ void enfileirar(char *s, pacientes *&i, pacientes *&f);
 void desenfileirar(pacientes *&i, pacientes *&f);
 void desalocar(pacientes *&L);
 void imprime(pacientes *p);
+void compara_nomes(pacientes *iMed1, pacientes *iMed2);
 
