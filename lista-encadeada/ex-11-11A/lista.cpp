@@ -88,7 +88,23 @@ void imprimir(celula *lst)
 
 void inserir_aposI (int x, int i, celula *&L)
 {
-    
+    int cont;
+    celula* p = L;
+    celula* novo = (celula*) calloc(1, sizeof(celula));
+    novo->chave = x;
+
+    if(L == NULL)
+        L = novo;
+    else{
+        cont = 1;
+        while(cont < i && p->prox != NULL)
+        {
+            cont++;
+            p = p->prox;
+        }
+        novo->prox = p->prox;
+        p->prox = novo;
+    }
     
 }
 
