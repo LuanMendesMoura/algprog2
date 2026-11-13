@@ -111,7 +111,30 @@ void inserir_aposI (int x, int i, celula *&L)
 
 void removerPares(celula *&L)
 {
-    
+    celula *ant = NULL;
+    celula *p = L;
+
+    while(p != NULL)
+    {
+        if(p->chave % 2 == 0){
+            // remocao do primeiro no
+            if(ant == NULL){
+                L = L->prox;
+                free(p);
+                p = L;
+            }
+            // remocao dos outros nos
+            else{
+                ant->prox = p->prox;
+                free(p);
+                p = ant->prox;
+            }
+        }
+        else{
+            ant = p;
+            p = p->prox;
+        }
+    }
 }
 
 
